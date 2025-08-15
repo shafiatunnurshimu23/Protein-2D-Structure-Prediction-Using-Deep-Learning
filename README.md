@@ -97,3 +97,67 @@ protein-2d-structure/
 ├─ requirements.txt
 ├─ README.md
 └─ .gitignore
+```
+## 6. Visualizations
+
+### 6.1. Weight Update GIFs
+- `*_l2.gif` — L2 norm per filter across epochs  
+- `*_dl2.gif` — Magnitude of weight updates per filter  
+Files are saved under:
+**outputs/weights_viz/<layer_name>/<layer_name>_l2.gif**
+**outputs/weights_viz/<layer_name>/<layer_name>_dl2.gif**
+
+### 6.2. Training Curves
+- `loss.png` — Train vs validation loss  
+- `accuracy.png` — Train vs validation accuracy  
+Files are saved under:
+outputs/figures/loss.png
+outputs/figures/accuracy.png
+
+### 6.3. Confusion Matrix
+- `confusion_matrix.png` — Per-residue classification results on test set  
+Saved under:
+outputs/figures/confusion_matrix.png
+## 7. How to Run This Project
+
+### Prerequisites
+- Python 3.8+
+- Virtual environment recommended
+
+### Steps
+
+**Clone the repository:**
+```bash
+git clone https://github.com/<your-username>/protein-2d-structure.git
+cd protein-2d-structure
+```
+```bash
+python -m venv venv
+# Linux/Mac
+source venv/bin/activate
+# Windows
+venv\Scripts\activate
+```
+```bash
+pip install -r requirements.txt
+python src/train.py
+python src/evaluate.py
+```
+## 8. Mermaid Diagram – Project Flow
+```mermaid
+graph TD
+    A["Raw Data<br/>(FASTA + .ss2)"] --> B["Preprocessing<br/>(One-hot encoding, Padding)"];
+    B --> C["Conv1D Model Training<br/>(Adam, Cross-Entropy)"];
+    C --> D["Weight Tracking Callback<br/>(L2 Norms, ΔW Norms)"];
+    C --> E["Validation Curves<br/>(Loss, Accuracy)"];
+    D --> F["GIFs of Weight Updates"];
+    E --> G["loss.png / accuracy.png"];
+    C --> H["Evaluation on Test Set"];
+    H --> I["Confusion Matrix<br/>+ Metrics"];
+    F --> J["outputs/weights_viz/"];
+    G --> J;
+    I --> J;
+```
+
+
+
