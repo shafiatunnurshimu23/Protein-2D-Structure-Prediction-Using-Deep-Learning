@@ -19,22 +19,21 @@ Predict per-residue secondary structure (H = helix, C = coil, B = beta) from ami
 ---
 
 ## Project structure
-
 protein-2d-structure/
 ├─ data/
-│ ├─ raw/ # FASTA + .ss2 inputs (not committed)
-│ └─ processed/ # Optional: cached numpy arrays
+│  ├─ raw/             # Input FASTA and .ss2 files (not committed)
+│  └─ processed/       # Optional: Cached preprocessed numpy arrays
 ├─ outputs/
-│ ├─ figures/ # loss.png, accuracy.png, confusion_matrix.png
-│ ├─ metrics/ # history.csv, classification_report.txt
-│ ├─ models/ # protein_cnn.h5
-│ └─ weights_viz/ # GIFs and PNG frames per Conv1D layer
+│  ├─ figures/         # loss.png, accuracy.png, confusion_matrix.png
+│  ├─ metrics/         # history.csv, classification_report.txt
+│  ├─ models/          # protein_cnn.h5
+│  └─ weights_viz/     # GIFs and PNG frames of weight dynamics per Conv1D layer
 ├─ src/
-│ ├─ preprocess.py # Load FASTA + SS2, encode, save arrays
-│ ├─ train.py # Build model, train, save model and plots
-│ ├─ evaluate.py # Test set evaluation, confusion matrix, report
-│ └─ callbacks.py # Conv1DFilterLinesCallback for weight GIFs
-├─ sequences.fasta # Example FASTA (place your file here or in data/raw/)
-├─ requirements.txt
+│  ├─ preprocess.py    # Load data, encode sequences/labels, save arrays
+│  ├─ train.py         # Build, train, and save the model and visualizations
+│  ├─ evaluate.py      # Evaluate the model on the test set
+│  └─ callbacks.py     # Contains the Conv1DFilterLinesCallback for weight GIFs
+├─ sequences.fasta     # Example FASTA file
+├─ requirements.txt    # Project dependencies
 ├─ README.md
 └─ .gitignore
