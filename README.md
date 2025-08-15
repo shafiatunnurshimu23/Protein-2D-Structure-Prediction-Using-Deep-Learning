@@ -104,21 +104,40 @@ protein-2d-structure/
 - `*_l2.gif` — L2 norm per filter across epochs  
 - `*_dl2.gif` — Magnitude of weight updates per filter  
 Files are saved under:
+
 **outputs/weights_viz/<layer_name>/<layer_name>_l2.gif**
 **outputs/weights_viz/<layer_name>/<layer_name>_dl2.gif**
+
+![0 GIF_conv1_dl2](https://github.com/user-attachments/assets/eae18598-979c-49b7-ba83-b9433793dd9c)
+
+![0 GIF_conv1_l2](https://github.com/user-attachments/assets/b710a802-6164-4c68-9273-1e1c3b137ff8)
+
+![0 GIF_conv2_dl2](https://github.com/user-attachments/assets/084d2def-5aef-4c33-bc4a-2f9e880b4c1e)
+
+![0 GIF_conv2_l2](https://github.com/user-attachments/assets/b20ba5a5-b272-411f-bafb-a51ab2ae41fb)
+
+![0 GIF_head_dl2](https://github.com/user-attachments/assets/ab476e44-15ed-476f-b282-a07f0c45b8da)
+
+![0 GIF_head_l2](https://github.com/user-attachments/assets/5108f497-db0f-4cb5-a4ac-2e502be6bd2b)
 
 ### 6.2. Training Curves
 - `loss.png` — Train vs validation loss  
 - `accuracy.png` — Train vs validation accuracy  
 Files are saved under:
 outputs/figures/loss.png
+<img width="960" height="640" alt="loss" src="https://github.com/user-attachments/assets/b10af9d2-deec-4d81-84be-7b60e9b60703" />
 outputs/figures/accuracy.png
+<img width="960" height="640" alt="accuracy" src="https://github.com/user-attachments/assets/dd5d8b14-7cf1-4e56-b2eb-f7a5cad90a1d" />
+
 
 ### 6.3. Confusion Matrix
 - `confusion_matrix.png` — Per-residue classification results on test set  
 Saved under:
 outputs/figures/confusion_matrix.png
+<img width="960" height="800" alt="confusion_matrix" src="https://github.com/user-attachments/assets/648b1bbb-60fe-4e78-b17c-119c5bae0eee" />
 ## 7. How to Run This Project
+
+
 
 ### Prerequisites
 - Python 3.8+
